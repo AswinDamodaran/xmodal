@@ -44,7 +44,7 @@ function App() {
       <Button onClick={handleModal} variant="contained">
         Open Form
       </Button>
-      <Modal open={isOpen} onClose={handleModal} className="modal">
+      <Modal open={isOpen} onClose={()=>setIsOpen(false)} className="modal">
         <div className="modal-content">
           <form onSubmit={handleSubmit} className="forms">
             <label htmlFor="username">Username:</label>
