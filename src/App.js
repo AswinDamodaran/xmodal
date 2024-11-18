@@ -24,11 +24,11 @@ function App() {
         return;
       }
     }
-    if(dob){
-      const dobDate=new Date(dob)
-      if(dobDate> new Date()){
-        alert("Invalid date of birth")
-        return
+    if (dob) {
+      const dobDate = new Date(dob);
+      if (dobDate > new Date()) {
+        alert("Invalid date of birth");
+        return;
       }
     }
     handleModal();
@@ -44,7 +44,12 @@ function App() {
       <Button onClick={handleModal} variant="contained">
         Open Form
       </Button>
-      <Modal open={isOpen} onClose={()=>setIsOpen(false)} className="modal">
+      <Modal
+        open={isOpen}
+        onClose={handleModal}
+        className="modal"
+        keepMounted={false}
+      >
         <div className="modal-content">
           <form onSubmit={handleSubmit} className="forms">
             <label htmlFor="username">Username:</label>
