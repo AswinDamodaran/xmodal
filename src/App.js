@@ -45,8 +45,8 @@ function App() {
         Open Form
       </Button>
       {isOpen && (
-        <div className="modal" >
-          <div className="modal-content">
+        <div className="modal" onClick={handleModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <form onSubmit={handleSubmit} className="forms">
               <label htmlFor="username">Username:</label>
               <input
