@@ -17,6 +17,12 @@ function App() {
         return;
       }
     }
+    if(mobileNo){
+      if(mobileNo.length<11){
+        alert("Invalid phone number")
+        return
+      }
+    }
     handleModal();
   };
 
@@ -43,14 +49,21 @@ function App() {
             />
             <label for="email">Email Address:</label>
             <input
-            className="submit-button"
               id="email"
               type="text"
               value={email}
               required
               onChange={(e) => setEmail(e.target.value)}
             />
-            <Button variant="contained" type="submit">
+            <label for="phone">Phone Number:</label>
+            <input
+              id="phone"
+              type="text"
+              value={mobileNo}
+              required
+              onChange={(e) => setMobileNo(e.target.value)}
+            />
+            <Button className="submit-button" variant="contained" type="submit">
               Submit
             </Button>
           </form>
