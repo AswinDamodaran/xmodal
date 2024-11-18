@@ -49,6 +49,9 @@ function App() {
         onClose={handleModal}
         className="modal"
         keepMounted={false}
+        BackdropProps={{
+          style: { pointerEvents: "none" },
+        }}
       >
         <div className="modal-content">
           <form onSubmit={handleSubmit} className="forms">
