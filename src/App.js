@@ -8,7 +8,7 @@ function App() {
   const [mobileNo, setMobileNo] = useState("");
   const [email, setEmail] = useState("");
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     if (email) {
       const check = email.split("");
@@ -43,6 +43,7 @@ function App() {
             />
             <label for="email">Email Address:</label>
             <input
+            className="submit-button"
               id="email"
               type="text"
               value={email}
